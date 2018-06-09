@@ -35,9 +35,7 @@
 <td>
 	<a class="btn btn-warning" href="{{ route('user.edit',$data->id) }}">Edit</a>
 </td>
-<td>
-	<a href="{{ route('user.show',$data->id) }}" class="btn btn-success">Show</a>
-</td>
+
 <td>
 	<form method="post" action="{{ route('user.destroy',$data->id) }}">
 		<input name="_token" type="hidden" value="{{ csrf_token() }}">

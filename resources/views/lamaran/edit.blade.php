@@ -14,7 +14,7 @@
         			{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('file_cv') ? ' has-error' : '' }}">
 			  			<label class="control-label"></label>	
-			  			<input type="text" name="file_cv" value="{{ $r->file_cv}}" class="form-control"  required>
+			  			<input type="file" name="file_cv" value="{{ $r->file_cv}}" class="form-control"  required>
 			  			@if ($errors->has('file_cv'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('file_cv) }}</strong>
@@ -33,9 +33,14 @@
 
 			  		<div class="form-group {{ $errors->has('lowongan') ? ' has-error' : '' }}">
 			  			<label class="control-label">Lowongan</label>	
-			  			<input type="text" name="low_id" value="{{ $r->lowongan
-                            <span class="help-block">
-                                <strong>{{ $errors->first('lowongan') }}</strong>
+			  			<select name="low_id" class="form=control">
+			  				@foreach($q as $data)
+			  				<option value="{{ $data->id }}" {{ $selectedq == $data->id ? 'selected="selected"' : '' }}> {{ $data->nama_low }}</option>
+			  				@endforeach
+			  			</select>
+			  			@if ($errors->has('low_id'))
+			  			<span class="help-block">
+			  			<strong>{{ $errors->first('low_id') }}</strong>
                             </span>
                         @endif
 			  		</div>

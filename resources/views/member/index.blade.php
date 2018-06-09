@@ -27,16 +27,14 @@
 				  		@foreach($k as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
-				    	<td>{{ $data->foto }}</td>
+				    	<td><img src="{{asset('assets/admin/images/loker/'.$data->logo.'')}}" width="70" height="70"></td>
 				    	<td>{{ $data->alamat }}</td>
 				    	<td><p>{{ $data->User->email }}</p></td>
 				    	
 <td>
 	<a class="btn btn-warning" href="{{ route('member.edit',$data->id) }}">Edit</a>
 </td>
-<td>
-	<a href="{{ route('member.show',$data->id) }}" class="btn btn-success">Show</a>
-</td>
+
 <td>
 	<form method="post" action="{{ route('member.destroy',$data->id) }}">
 		<input name="_token" type="hidden" value="{{ csrf_token() }}">

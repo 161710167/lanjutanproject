@@ -1,19 +1,24 @@
+@extends('layouts.admin')
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
     <title></title>
 </head>
-<body bgcolor="pink">
+<body>
+
+<div>
+    
+
+</div>
 
 
-@extends('layouts.admin')
-@section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-            <font face="verdana" color="green"> 
-                 <class="panel-heading"><ceter> LOKER BANDUNG</center> 
+           
+                 
 
                 <div class="panel-body">
                     @if (session('status'))

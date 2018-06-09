@@ -11,7 +11,7 @@
 			  <div class="panel-body">
 			  	<form action="{{ route('perusahaan.store') }}" method="post" enctype="multipart/form-data">
 			  		{{ csrf_field() }}
-			  		<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
+			  		<div class="form-grfileoup {{ $errors->has('nama') ? ' has-error' : '' }}">
 			  			<label class="control-label">Nama Perusahaan</label>	
 			  			<input type="text" name="nama" class="form-control"  required>
 			  			@if ($errors->has('nama'))

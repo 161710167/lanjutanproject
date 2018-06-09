@@ -33,7 +33,7 @@
 				    	<td>{{ $data->nama_low }}</td>
 				    	<td>{{ $data->tgl_mulai }}</td>
 				    	<td>{{ $data->lokasi }}</td>
-				    	<td>{{ $data->gaji }}</td>
+				    	<td>Rp.{{ $data->gaji }}</td>
 				    	<td>{{ $data->deskripsi_iklan }}</td>
 				    	<td><p>{{ $data->Perusahaan->deskripsi }}</p></td>
 				    	
@@ -56,6 +56,11 @@
 				      @endforeach	
 				  	</tbody>
 				  </table>
+				  <br>
+				  <br>
+				  <br>
+				  expired tanggal lowongan: 1 Bulan dari tanggal terbit lowongan!!!
+
 				</div>
 			  </div>
 			</div>	

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Lamaran;
 use App\Lowongan;
-
 use Illuminate\Http\Request;
 use Session;
 class LamaranController extends Controller
@@ -50,14 +49,21 @@ class LamaranController extends Controller
         $r->status = $request->status;
         $r->low_id = $request->low_id;
         $r->save();
-        // attach fungsinya untuk melampirkan data,yang dilampirkan disini ialah data dari method Pesanan
-        //  yang ada di model pengantin
+
+         if($request->hasfile('file_cv')){
+            $file =$request ->file('file_cv');
+            $destinationPath = public_path().'/assets/admin/images/loker/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSucsess =$file -> move($destinationPath,$filename);
+            $r->file_cv = $filename;
         Session::flash("flash_notification", [
         "level"=>"success",
-        "message"=>"Berhasil menyimpan <b>$p->file_cv</b>"
+        "message"=>"Berhasil menyimpan <b>$r->file_cv</b>"
         ]);
+        {
         return redirect()->route('lamaran.index');
-
+}
+}
     }
 
     /**
@@ -104,10 +110,7 @@ class LamaranController extends Controller
         $r->file_cv = $request->file_cv;
         $r->status = $request->status;
         $r->low_id = $request->low_id;
-       
-        $r->save();
-        // attach fungsinya untuk melampirkan data,yang dilampirkan disini ialah data dari method Pesanan
-        //  yang ada di model 
+        $r->save(); 
         Session::flash("flash_notification", [
         "level"=>"success",
         "message"=>"Berhasil mengedit <b>$r->file_cv</b>"

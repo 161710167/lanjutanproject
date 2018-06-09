@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
+<ceter>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-            <font size="6" color="magenta" 
-                 class="panel-heading"><ceter> LOKER BANDUNG</center> 
+                             LOKER BANDUNG</center> 
 
                 <div class="panel-body">
                     @if (session('status'))

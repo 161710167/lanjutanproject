@@ -47,6 +47,15 @@ class MemberController extends Controller
         $k->alamat = $request->alamat;
         $k->user_id = $request->user_id;
         $k->save();
+
+        if($request->hasfile('foto')){
+            $file =$request ->file('foto');
+            $destinationPath = public_path().'/assets/admin/images/loker/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSucsess =$file -> move($destinationPath,$filename);
+            $k->foto = $filename;
+        }
+        
         Session::flash("flash_notification", [
         "level"=>"success",
         "message"=>"Berhasil menyimpan <b>$k->email</b>"
@@ -99,7 +108,27 @@ class MemberController extends Controller
         $k->foto = $request->foto;
         $k->alamat = $request->alamat;
         $k->user_id = $request->user_id;
+        //edit upload foto
+         if($request->hasfile('foto')){
+            $file =$request ->file('foto');
+            $destinationPath = public_path().'/assets/admin/images/loker/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSucsess =$file -> move($destinationPath,$filename);
+            //hapus foto lama jika ada
+            if($k->foto) {
+                $old_foto =$k->foto;
+                $filepath = public_path() . DIRECTORY_SEPARATOR .'/assets/admin/images/loker/' . DIRECTORY_SEPARATOR  . $k->foto;
+                try{
+                    File::delete($filepath);
+                } catch (FileNotFoundException $e){
+                    //file sudah di hapus/tidak ada
+                }
+     }       
+                $k->foto = $filename;
+            }
         $k->save();
+
+
         Session::flash("flash_notification", [
         "level"=>"success",
         "message"=>"Berhasil mengedit <b>$k->email</b>"

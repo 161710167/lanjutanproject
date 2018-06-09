@@ -20,9 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/cek',function(){
-	return view('layouts.admin');
-});
+ 
 	Route::group(['prefix'=>'admin', 'Middleware'=>['auth','role:admin']], function () {
 	Route::resource('user','UserController');
 	Route::resource('member','MemberController');
@@ -30,5 +28,14 @@ Route::get('/cek',function(){
 	Route::resource('lowongan','LowonganController');
 	Route::resource('lamaran','LamaranController');
 	
+});
+// 	Route::group(['prefix'=>'member', 'middleware'=>['auth','role:member']], function () {
+// 	Route::resource('perusahaan','PerusahaanController');
+// 	Route::resource('lowongan','LowonganController');
+// 	Route::resource('lamaran','LamaranController');
+// });
+
+	Route::get('/cocobaan', function () {
+    return view('layouts.coba');
 });
 

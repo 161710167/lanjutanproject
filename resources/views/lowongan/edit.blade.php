@@ -13,7 +13,7 @@
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('nama_low') ? ' has-error' : '' }}">
-			  			<label class="control-label"></label>	
+			  			<label class="control-label">Nama Lowongan</label>	
 			  			<input type="text" name="nama_low" value="{{ $q->nama_low }}" class="form-control"  required>
 			  			@if ($errors->has('nama_low'))
                             <span class="help-block">
@@ -23,7 +23,7 @@
 			  		</div>
 
 					<div class="form-group {{ $errors->has('tgl_mulai') ? ' has-error' : '' }}">
-			  			<label class="control-label">tgl_mulai</label>	
+			  			<label class="control-label">Tanggal Terbit Lowongan</label>	
 			  			<input type="date" name="tgl_mulai" value="{{ $q->tgl_mulai }}" class="form-control"  required>
 			  			@if ($errors->has('tgl_mulai'))
                             <span class="help-block">
@@ -32,7 +32,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('lokasi') ? ' has-error' : '' }}">
-			  			<label class="control-label">lokasi</label>	
+			  			<label class="control-label">Lokasi</label>	
 			  			<input type="text" name="lokasi" value="{{ $q->lokasi }}" class="form-control"  required>
 			  			@if ($errors->has('lokasi'))
                             <span class="help-block">
@@ -42,7 +42,7 @@
 			  		</div>
 
 			  		<div class="form-group {{ $errors->has('gaji') ? ' has-error' : '' }}">
-			  			<label class="control-label">gaji</label>	
+			  			<label class="control-label">Gaji</label>	
 			  			<input type="text" name="gaji" value="{{ $q->gaji }}" class="form-control"  required>
 			  			@if ($errors->has('gaji'))
                             <span class="help-block">
@@ -52,7 +52,7 @@
 			  		</div>
 
 			  		<div class="form-group {{ $errors->has('deskripsi_iklan') ? ' has-error' : '' }}">
-			  			<label class="control-label">deskripsi_iklan</label>	
+			  			<label class="control-label">Deskripsi Lowongan</label>	
 			  			<input type="text" name="deskripsi_iklan" value="{{ $q->deskripsi_iklan }}" class="form-control"  required>
 			  			@if ($errors->has('deskripsi_iklan'))
                             <span class="help-block">
@@ -63,7 +63,7 @@
 			  		
 			  		
 			  		<div class="form-group {{ $errors->has('pers_id') ? ' has-error' : '' }}">
-			  			<label class="control-label">Deskripsi</label>	
+			  			<label class="control-label">Deskripsi Perusahaan</label>	
 			  			<select name="pers_id" class="form-control">
 			  				@foreach($p as $data)
 			  				<option value="{{ $data->id }}">{{ $data->deskripsi }}</option>

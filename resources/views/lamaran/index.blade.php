@@ -29,7 +29,7 @@
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->file_cv }}</td>
 				    	<td>{{ $data->status }}</td>
-				    	<td><p>{{ $data->nama_low }}</p></td>
+				    	<td><p>{{ $data->Lowongan->nama_low }}</p></td>
 				    	
 				    
            

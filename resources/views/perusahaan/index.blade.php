@@ -1,9 +1,10 @@
+
 @extends('layouts.admin')
 @section('content')
 
 	<div class="row">
 	<div class="container">
-	<div class="col-md-16">
+	<div class="col-md-90">
 			<div class="panel panel-success">
 			  <div class="panel-heading"><font color ="blue">Data perusahaan </font>
 			  	<div class="panel-title pull-right"><a href="{{ route('perusahaan.create') }}">Tambah</a>
@@ -11,7 +12,7 @@
 			  </div>
 			  <div class="panel-body">
 			  	<div class="table-responsive">
-				  <table class="table">
+				  <table  border="10" class="table">
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
@@ -26,7 +27,7 @@
 					  <th>Email</th>
 					  <th>Telepon</th>
 					  <th>User</th>
-					  <th colspan="3">Action</th>
+					  <th colspan="8">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>

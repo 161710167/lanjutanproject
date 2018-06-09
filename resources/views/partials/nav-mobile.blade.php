@@ -3,7 +3,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="assets/admin/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="assets/admin/images/loker/loker.png" width="70" height="40" alt="LOKER BANDUNG" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">

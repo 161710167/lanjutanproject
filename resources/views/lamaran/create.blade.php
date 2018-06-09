@@ -12,8 +12,8 @@
 			  	<form action="{{ route('lamaran.store') }}" method="post" >
 			  		{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('file_cv') ? ' has-error' : '' }}">
-			  			<label class="control-label">file_cv</label>	
-			  			<input type="text" name="file_cv" class="form-control"  required>
+			  			<label class="control-label">File CV</label>	
+			  			<input type="file" name="file_cv" class="form-control"  required>
 			  			@if ($errors->has('file_cv'))
                             <span class="helpfile_cvck">
                                 <strong>{{ $errors->first('file_cv') }}</strong>
@@ -21,7 +21,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('status') ? ' has-error' : '' }}">
-			  			<label class="control-label">status</label>	
+			  			<label class="control-label">Status</label>	
 			  			<input type="text" name="status" class="form-control"  required>
 			  			@if ($errors->has('status'))
                             <span class="help-block">
@@ -29,26 +29,18 @@
                             </span>
                         @endif
 			  		</div>
-			  		<div class="form-group {{ $errors->has('lowongan') ? ' has-error' : '' }}">
-			  			<label class="control-label">Lowongan</label>	
+			  		<div class="form-group {{ $errors->has('low_id') ? ' has-error' : '' }}">
+			  			<label class="control-label">low_id</label>	
 			  			<input type="text" name="low_id" class="form-control"  required>
-			  			@if ($errors->has('lowongan'))
+			  			@if ($errors->has('low_id'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('lowongan') }}</strong>
+                                <strong>{{ $errors->first('low_id') }}</strong>
                             </span>
                         @endif
 			  		</div>
 
 
-			  		<div class="form-group {{ $errors->has('user_id') ? ' has-error' : '' }}">
-			  			<label class="control-label">User</label>	
-			  			<select name="user_id" class="form-control">
-			  				@foreach($o as $data)
-			  				<option value="{{ $data->id }}">{{ $data->email }}</option>
-			  				@endforeach
-			  			</select>
-			  			
-			  		</div>
+			  		
 			  		
 			  		<div class="form-group">
 			  			<button type="submit" class="btn btn-primary">Tambah</button>
@@ -59,4 +51,4 @@
 		</div>
 	</div>
 </div>
-@endsections
+@endsection

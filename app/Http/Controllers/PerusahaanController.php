@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Perusahaan;
 use App\User;
+use File;
 use Illuminate\Http\Request;
 use Session;
 class PerusahaanController extends Controller

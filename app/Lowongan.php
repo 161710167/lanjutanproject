@@ -11,6 +11,7 @@ class Lowongan extends Model
 
     public function Perusahaan(){
         return $this->belongsto('App\Perusahaan','pers_id');
+        
   
     }
 }
